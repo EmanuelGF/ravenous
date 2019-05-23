@@ -18,24 +18,24 @@ class SearchBar extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  getSortByClass(sortByOption){
+  getSortByClass(sortByOption){ //serve para ativar os botões quando selecionados
     return (sortByOption === this.state.sortBy) ? 'active' : '';    
   }
 
-  handleSortByChange(sortByOption){
+  handleSortByChange(sortByOption){ //serve para ativar os botões quando selecionados
     this.setState({sortBy: sortByOption});
   }
 
-  handleTermChange(event){
+  handleTermChange(event){ //apanha o valor do input do termo a pequisar
     this.setState({ term: event.target.value });
   }
 
-  handleLocationChange(event){
+  handleLocationChange(event){ //apanha o valor do input do sitio relativo à pesquisa.
     this.setState({ location: event.target.value });
     event.preventDefault();
   }
 
-  handleSearch(event){
+  handleSearch(event){ // Aciona  a pesquisa quando o botao da pesquisa é clicado.
     this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
   }
 
